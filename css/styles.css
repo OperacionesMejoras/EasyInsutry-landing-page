@@ -29,14 +29,8 @@ ul { list-style: none; }
   box-shadow: 0 1px 0 var(--border-light);
 }
 
-.nav-logo {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-extrabold);
-  font-size: var(--font-size-xl);
-  letter-spacing: -0.02em;
-  color: var(--text);
-}
-.nav-logo span { color: var(--brand-viridian); }
+.nav-logo { display: flex; align-items: center; }
+.nav-logo-img { height: 36px; width: auto; display: block; }
 
 .nav-links {
   display: flex; gap: 2.5rem; align-items: center;
@@ -686,8 +680,7 @@ h2 em { font-style: normal; color: var(--brand-dark-green); }
   flex-wrap: wrap; gap: 1rem;
   color: var(--white);
 }
-.site-footer .nav-logo { color: var(--white); }
-.site-footer .nav-logo span { color: var(--brand-sage); }
+.site-footer .nav-logo-img { filter: invert(1) brightness(1.5); }
 .site-footer p { font-size: 0.78rem; color: rgba(248,246,242,0.45); }
 .footer-contact { font-size: 0.78rem; color: rgba(248,246,242,0.45); text-align: right; }
 .footer-contact a { color: var(--brand-sage); transition: opacity var(--transition-fast); }
@@ -701,6 +694,7 @@ h2 em { font-style: normal; color: var(--brand-dark-green); }
   .site-nav { padding: 1.2rem 1.5rem; }
   .nav-links { display: none; }
   .nav-toggle { display: block; }
+  .nav-logo-img { height: 30px; }
 
   section,
   .hero { padding: var(--padding-mobile); }
