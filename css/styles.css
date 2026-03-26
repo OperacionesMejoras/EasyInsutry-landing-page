@@ -512,96 +512,134 @@ h2 em { font-style: normal; color: var(--brand-dark-green); }
 .case-card p { font-size: var(--font-size-sm); color: var(--text-muted); line-height: 1.7; }
 
 /* ============================================================
-   CONTACT — fondo blanco
+   MODAL DE CONTACTO
 ============================================================ */
-.contact { background: var(--bg-page); }
-
-.contact-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: start;
-}
-.contact-info h2 { margin-bottom: 1rem; }
-.contact-info > p {
-  color: var(--text-muted);
-  line-height: 1.8;
-  font-size: 0.93rem;
-  margin-bottom: 2rem;
-}
-.contact-detail {
-  display: flex; flex-direction: column; gap: 0.8rem;
-}
-.contact-detail a {
-  display: flex; align-items: center; gap: 0.75rem;
-  color: var(--text-muted); font-size: var(--font-size-sm);
-  transition: color var(--transition-fast);
-}
-.contact-detail a:hover { color: var(--brand-viridian); }
-.contact-detail-icon {
-  width: 36px; height: 36px;
-  background: rgba(71, 121, 101, 0.08);
-  border: 1px solid rgba(71, 121, 101, 0.15);
-  border-radius: var(--radius-md);
+.contact-modal {
+  position: fixed; inset: 0;
+  z-index: 200;
   display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
+  padding: 1.5rem;
 }
-.contact-detail-icon svg { color: var(--brand-viridian); }
+.contact-modal[hidden] { display: none; }
 
-.contact-form {
-  display: flex; flex-direction: column; gap: 1rem;
+.contact-modal-overlay {
+  position: absolute; inset: 0;
+  background: rgba(18, 18, 18, 0.55);
+  backdrop-filter: blur(4px);
 }
-.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-.form-group label {
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-.form-group input,
-.form-group textarea,
-.form-group select {
-  background: var(--bg-alt);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-sm);
-  padding: 0.85rem 1rem;
-  font-family: var(--font-body);
-  font-size: var(--font-size-base);
-  color: var(--text);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
-}
-.form-group input::placeholder,
-.form-group textarea::placeholder { color: #b0a89e; }
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-  outline: none;
+
+.contact-modal-box {
+  position: relative;
   background: #fff;
-  border-color: var(--brand-viridian);
-  box-shadow: 0 0 0 3px rgba(71, 121, 101, 0.12);
-}
-.form-group textarea { resize: vertical; min-height: 120px; }
-.form-group select { appearance: none; cursor: pointer; }
-
-.form-submit {
-  margin-top: 0.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.18);
+  padding: 2.5rem 2rem 2rem;
   width: 100%;
-  padding: 1rem;
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
-  font-size: 0.88rem;
-  background: var(--brand-dark-green);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  max-width: 440px;
+  animation: modal-in 0.22s ease;
 }
-.form-submit:hover {
-  background: var(--brand-viridian);
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+.contact-modal-close {
+  position: absolute; top: 1rem; right: 1rem;
+  background: none; border: none; cursor: pointer;
+  color: var(--text-muted);
+  padding: 0.4rem;
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+.contact-modal-close:hover {
+  color: var(--text);
+  background: var(--bg-alt);
+}
+
+.contact-modal-box .s-tag { margin-bottom: 0.4rem; }
+
+.contact-modal-box h3 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.modal-sub {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 1.8rem;
+}
+
+.contact-modal-options {
+  display: flex; flex-direction: column; gap: 0.75rem;
+}
+
+.contact-modal-btn {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+.contact-modal-btn:hover {
   transform: translateY(-2px);
-  box-shadow: var(--glow-accent);
+  box-shadow: var(--shadow-hover);
+}
+
+.contact-modal-btn--wa {
+  background: #e9faf0;
+  color: #1a7a40;
+  border-color: #c3efd6;
+}
+.contact-modal-btn--wa:hover { border-color: #25d366; }
+.contact-modal-btn--wa .contact-modal-btn-ico { color: #25d366; }
+
+.contact-modal-btn--mail {
+  background: rgba(71, 121, 101, 0.06);
+  color: var(--brand-dark-green);
+  border-color: rgba(71, 121, 101, 0.18);
+}
+.contact-modal-btn--mail:hover { border-color: var(--brand-viridian); }
+.contact-modal-btn--mail .contact-modal-btn-ico { color: var(--brand-viridian); }
+
+.contact-modal-btn-ico {
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.contact-modal-btn-text {
+  flex: 1;
+  display: flex; flex-direction: column; gap: 0.15rem;
+}
+.contact-modal-btn-text strong {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+}
+.contact-modal-btn-text small {
+  font-size: var(--font-size-xs);
+  opacity: 0.7;
+}
+
+.contact-modal-btn-arrow {
+  flex-shrink: 0;
+  opacity: 0.45;
+}
+
+/* Nav CTA as button (no form inside nav) */
+.nav-links button.nav-cta,
+.nav-mobile button.nav-cta {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+.nav-mobile button.nav-cta {
+  font-size: 1rem;
+  width: 100%;
 }
 
 /* ============================================================
