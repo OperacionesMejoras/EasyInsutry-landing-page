@@ -1,36 +1,68 @@
 /* ==========================================================
-   EasyInsutry — Main JavaScript
+   EasyIndustry — Main JavaScript
    ========================================================== */
 
-// Mobile navigation toggle
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu   = document.querySelector('.nav-menu');
+// --- Mobile navigation toggle ---
+const navToggle = document.getElementById('nav-toggle');
+const navMobile = document.getElementById('nav-mobile');
 
-if (navToggle && navMenu) {
+if (navToggle && navMobile) {
   navToggle.addEventListener('click', () => {
-    const isOpen = navMenu.classList.toggle('is-open');
-    navToggle.setAttribute('aria-expanded', isOpen);
+    const isOpen = navMobile.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
   });
 
-  // Close menu when a link is clicked
-  navMenu.querySelectorAll('a').forEach(link => {
+  // Close on link click
+  navMobile.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      navMenu.classList.remove('is-open');
+      navMobile.classList.remove('is-open');
       navToggle.setAttribute('aria-expanded', 'false');
     });
   });
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (!navToggle.contains(e.target) && !navMobile.contains(e.target)) {
+      navMobile.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
 }
 
-// Contact form — basic validation placeholder
-const contactForm = document.querySelector('.contact__form');
+// --- Contact form ---
+const contactForm = document.getElementById('contact-form');
 
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    // TODO: replace with actual form submission logic (e.g., fetch to API)
+
     const data = Object.fromEntries(new FormData(contactForm));
-    console.log('Form submitted:', data);
-    alert('Mensaje enviado. Nos pondremos en contacto contigo pronto.');
-    contactForm.reset();
+
+    // Basic validation
+    if (!data.name || !data.email || !data.message) {
+      alert('Por favor completá todos los campos requeridos.');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      alert('Ingresá un correo electrónico válido.');
+      return;
+    }
+
+    // TODO: replace with actual API call or form service (e.g. Formspree, EmailJS)
+    console.log('Formulario enviado:', data);
+
+    const btn = contactForm.querySelector('.form-submit');
+    btn.textContent = '✓ Mensaje enviado';
+    btn.disabled = true;
+    btn.style.background = '#50dc78';
+    btn.style.color = '#0a0a0a';
+
+    setTimeout(() => {
+      contactForm.reset();
+      btn.textContent = 'Enviar mensaje →';
+      btn.disabled = false;
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 3000);
   });
 }

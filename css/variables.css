@@ -1,66 +1,70 @@
 /* ==========================================================
-   EasyInsutry — Brand Design Tokens
-   Update these variables to match the brand style guide
+   EasyIndustry — Brand Design Tokens
    ========================================================== */
 
 :root {
   /* --- Colors --- */
-  --color-primary:    #0a0a0a;    /* Main brand color */
-  --color-secondary:  #1a1a2e;    /* Secondary brand color */
-  --color-accent:     #e94560;    /* Accent / CTA color */
-  --color-bg:         #ffffff;    /* Page background */
-  --color-bg-alt:     #f5f5f5;    /* Alternate section background */
-  --color-text:       #1a1a1a;    /* Body text */
-  --color-text-muted: #6b7280;    /* Muted / secondary text */
-  --color-border:     #e5e7eb;    /* Borders and dividers */
+  --black:       #0a0a0a;
+  --white:       #f5f3ef;
+  --accent:      #e8f037;
+  --light-gray:  #8a8a8a;
+  --card-bg:     #111111;
+  --bg-subtle:   #0d0d0d;
+  --border:      rgba(255, 255, 255, 0.07);
 
   /* --- Typography --- */
-  --font-heading: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  --font-body:    'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Syne', 'Helvetica Neue', Arial, sans-serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', Arial, sans-serif;
 
-  --font-size-xs:   0.75rem;   /* 12px */
-  --font-size-sm:   0.875rem;  /* 14px */
-  --font-size-base: 1rem;      /* 16px */
-  --font-size-lg:   1.125rem;  /* 18px */
-  --font-size-xl:   1.25rem;   /* 20px */
-  --font-size-2xl:  1.5rem;    /* 24px */
-  --font-size-3xl:  1.875rem;  /* 30px */
-  --font-size-4xl:  2.25rem;   /* 36px */
-  --font-size-5xl:  3rem;      /* 48px */
+  --font-size-xs:   0.72rem;
+  --font-size-sm:   0.85rem;
+  --font-size-base: 1rem;
+  --font-size-lg:   1.05rem;
+  --font-size-xl:   1.25rem;
+  --font-size-2xl:  1.5rem;
+  --font-size-3xl:  2rem;
+  --font-size-4xl:  clamp(2rem, 3.5vw, 3rem);
+  --font-size-hero: clamp(3rem, 6.5vw, 6rem);
 
-  --font-weight-regular: 400;
-  --font-weight-medium:  500;
+  --font-weight-light:    300;
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
   --font-weight-semibold: 600;
-  --font-weight-bold:    700;
-
-  --line-height-tight:  1.25;
-  --line-height-normal: 1.5;
-  --line-height-loose:  1.75;
+  --font-weight-bold:     700;
+  --font-weight-extrabold: 800;
 
   /* --- Spacing --- */
   --space-1:  0.25rem;
   --space-2:  0.5rem;
   --space-3:  0.75rem;
   --space-4:  1rem;
+  --space-5:  1.3rem;
   --space-6:  1.5rem;
   --space-8:  2rem;
+  --space-10: 2.5rem;
   --space-12: 3rem;
   --space-16: 4rem;
+  --space-20: 5rem;
   --space-24: 6rem;
+  --space-28: 7rem;
+  --space-36: 9rem;
 
   /* --- Layout --- */
+  --nav-height:      4rem;
   --max-width:       1200px;
-  --container-px:    1.5rem;
-  --border-radius:   0.5rem;
-  --border-radius-lg: 1rem;
+  --padding-section: var(--space-28) var(--space-20);
+  --padding-mobile:  5rem 1.5rem 3rem;
 
-  /* --- Shadows --- */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  /* --- Borders --- */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
 
   /* --- Transitions --- */
-  --transition-fast:   150ms ease;
-  --transition-normal: 250ms ease;
-  --transition-slow:   400ms ease;
+  --transition-fast:   0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow:   0.35s ease;
+
+  /* --- Shadows --- */
+  --glow-accent: 0 10px 30px rgba(232, 240, 55, 0.25);
 }
