@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EasyInsutry — descripción de la marca aquí." />
+
+  <title>EasyInsutry</title>
+
+  <!-- Fonts: replace with brand fonts when available -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER / NAVEGACIÓN
+  ======================================================= -->
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="nav-logo">EasyInsutry</a>
+
+      <nav aria-label="Navegación principal">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#about">Nosotros</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#contact">Contacto</a></li>
+          <li><a href="#contact" class="btn btn-primary">Comenzar</a></li>
+        </ul>
+      </nav>
+
+      <button
+        class="nav-toggle"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+        aria-label="Abrir menú"
+      >
+        <!-- Hamburger icon -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6"  x2="21" y2="6"  />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ======================================================
+         HERO
+    ======================================================= -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <span class="hero__eyebrow">Bienvenido a EasyInsutry</span>
+        <h1 class="hero__title" id="hero-title">
+          Tu solución para<br />el mundo industrial
+        </h1>
+        <p class="hero__description">
+          Placeholder — describe aquí la propuesta de valor principal de la marca en una o dos oraciones.
+        </p>
+        <div class="hero__cta">
+          <a href="#services" class="btn btn-primary">Ver servicios</a>
+          <a href="#contact"  class="btn btn-secondary">Contáctanos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         ABOUT
+    ======================================================= -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label">Quiénes somos</span>
+          <h2 class="section-title" id="about-title">Sobre EasyInsutry</h2>
+          <p class="section-description">
+            Placeholder — breve descripción de la empresa, misión y valores.
+          </p>
+        </header>
+
+        <div class="about__grid">
+          <div class="about__card">
+            <div class="about__card-icon">🏭</div>
+            <h3>Experiencia</h3>
+            <p>Años de trayectoria en el sector industrial respaldan cada proyecto.</p>
+          </div>
+          <div class="about__card">
+            <div class="about__card-icon">🤝</div>
+            <h3>Confianza</h3>
+            <p>Construimos relaciones a largo plazo con nuestros clientes.</p>
+          </div>
+          <div class="about__card">
+            <div class="about__card-icon">⚡</div>
+            <h3>Eficiencia</h3>
+            <p>Soluciones rápidas y efectivas adaptadas a cada necesidad.</p>
+          </div>
+          <div class="about__card">
+            <div class="about__card-icon">🌐</div>
+            <h3>Alcance</h3>
+            <p>Presencia nacional con visión global.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SERVICES
+    ======================================================= -->
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label">Qué hacemos</span>
+          <h2 class="section-title" id="services-title">Nuestros servicios</h2>
+          <p class="section-description">
+            Placeholder — descripción general de los servicios o productos.
+          </p>
+        </header>
+
+        <div class="services__grid">
+          <article class="service-card">
+            <div class="service-card__icon">🔧</div>
+            <h3 class="service-card__title">Servicio 1</h3>
+            <p class="service-card__description">
+              Placeholder — descripción del primer servicio o producto principal.
+            </p>
+          </article>
+          <article class="service-card">
+            <div class="service-card__icon">📦</div>
+            <h3 class="service-card__title">Servicio 2</h3>
+            <p class="service-card__description">
+              Placeholder — descripción del segundo servicio o producto.
+            </p>
+          </article>
+          <article class="service-card">
+            <div class="service-card__icon">📊</div>
+            <h3 class="service-card__title">Servicio 3</h3>
+            <p class="service-card__description">
+              Placeholder — descripción del tercer servicio o producto.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         CONTACT
+    ======================================================= -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label">Hablemos</span>
+          <h2 class="section-title" id="contact-title">Contacto</h2>
+          <p class="section-description">
+            ¿Tienes un proyecto en mente? Escríbenos y te responderemos a la brevedad.
+          </p>
+        </header>
+
+        <form class="contact__form" novalidate>
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================
+       FOOTER
+  ======================================================= -->
+  <footer class="site-footer" aria-label="Pie de página">
+    <div class="container">
+      <span class="footer-brand">EasyInsutry</span>
+
+      <nav aria-label="Navegación de pie de página">
+        <ul class="footer-links">
+          <li><a href="#about">Nosotros</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <p class="footer-copy">
+        &copy; <span id="year"></span> EasyInsutry. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Inject current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>
