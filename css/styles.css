@@ -680,7 +680,14 @@ h2 em { font-style: normal; color: var(--brand-dark-green); }
   flex-wrap: wrap; gap: 1rem;
   color: var(--white);
 }
-.site-footer .nav-logo-img { filter: invert(1) brightness(1.5); }
+.footer-logo-text {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--font-size-xl);
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+.footer-logo-text span { color: var(--brand-sage); }
 .site-footer p { font-size: 0.78rem; color: rgba(248,246,242,0.45); }
 .footer-contact { font-size: 0.78rem; color: rgba(248,246,242,0.45); text-align: right; }
 .footer-contact a { color: var(--brand-sage); transition: opacity var(--transition-fast); }
