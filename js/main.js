@@ -3,30 +3,34 @@
    ========================================================== */
 
 // --- Mobile navigation toggle ---
-const navToggle = document.getElementById('nav-toggle');
-const navMobile = document.getElementById('nav-mobile');
+const navToggle  = document.getElementById('nav-toggle');
+const navMobile  = document.getElementById('nav-mobile');
+const navOverlay = document.getElementById('nav-overlay');
+
+function openMenu() {
+  navMobile.classList.add('is-open');
+  navOverlay.classList.add('is-open');
+  navToggle.setAttribute('aria-expanded', 'true');
+}
+
+function closeMenu() {
+  navMobile.classList.remove('is-open');
+  navOverlay.classList.remove('is-open');
+  navToggle.setAttribute('aria-expanded', 'false');
+}
 
 if (navToggle && navMobile) {
   navToggle.addEventListener('click', () => {
-    const isOpen = navMobile.classList.toggle('is-open');
-    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navMobile.classList.contains('is-open') ? closeMenu() : openMenu();
   });
 
   // Close on link click
   navMobile.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navMobile.classList.remove('is-open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
+    link.addEventListener('click', closeMenu);
   });
 
-  // Close on outside click
-  document.addEventListener('click', (e) => {
-    if (!navToggle.contains(e.target) && !navMobile.contains(e.target)) {
-      navMobile.classList.remove('is-open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    }
-  });
+  // Close on overlay click
+  navOverlay.addEventListener('click', closeMenu);
 }
 
 // --- Contact form ---
