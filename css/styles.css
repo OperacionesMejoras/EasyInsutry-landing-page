@@ -1,5 +1,5 @@
 /* ==========================================================
-   EasyIndustry — Main Stylesheet
+   Easy Industry — Main Stylesheet
    ========================================================== */
 
 @import './variables.css';
@@ -23,7 +23,7 @@ ul { list-style: none; }
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; justify-content: space-between; align-items: center;
   padding: 1.4rem 5rem;
-  background: rgba(10, 10, 10, 0.9);
+  background: rgba(18, 18, 18, 0.92);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
 }
@@ -109,26 +109,27 @@ ul { list-style: none; }
   display: flex; flex-direction: column; justify-content: center;
   padding: var(--space-36) var(--space-20) var(--space-20);
   position: relative; overflow: hidden;
+  background: var(--brand-teal);
 }
 
 .hero-grid-bg {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(232, 240, 55, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(232, 240, 55, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(178, 172, 115, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(178, 172, 115, 0.04) 1px, transparent 1px);
   background-size: 64px 64px;
   pointer-events: none;
 }
 .hero-glow {
   position: absolute; width: 700px; height: 700px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(232, 240, 55, 0.1) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(71, 121, 101, 0.18) 0%, transparent 65%);
   top: -150px; right: -150px; pointer-events: none;
 }
 
 .hero-badge {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  background: rgba(232, 240, 55, 0.08);
-  border: 1px solid rgba(232, 240, 55, 0.2);
+  background: rgba(178, 172, 115, 0.1);
+  border: 1px solid rgba(178, 172, 115, 0.25);
   color: var(--accent);
   padding: 0.35rem 1rem;
   border-radius: var(--radius-sm);
@@ -230,7 +231,7 @@ ul { list-style: none; }
 }
 .btn-dark {
   background: var(--black);
-  color: var(--accent);
+  color: var(--brand-sage);
   padding: 1rem 2.2rem;
   font-family: var(--font-heading);
   font-weight: var(--font-weight-bold);
@@ -284,7 +285,7 @@ h2 em { font-style: normal; color: var(--accent); }
 .svc-card::after {
   content: '';
   position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-  background: var(--accent);
+  background: linear-gradient(90deg, var(--brand-dark-green), var(--brand-sage));
   transform: scaleX(0); transform-origin: left;
   transition: transform var(--transition-slow);
 }
@@ -404,7 +405,7 @@ h2 em { font-style: normal; color: var(--accent); }
 }
 .b-pend { background: rgba(100, 180, 255, 0.15); color: #64b4ff; }
 .b-pres { background: rgba(255, 165, 0, 0.15);   color: #ffa500; }
-.b-apro { background: rgba(232, 240, 55, 0.15);  color: var(--accent); }
+.b-apro { background: rgba(178, 172, 115, 0.15);  color: var(--accent); }
 .b-cerr { background: rgba(80, 220, 120, 0.15);  color: #50dc78; }
 .mock-divider { height: 1px; background: var(--border); margin: 1.2rem 0; }
 .mock-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; }
@@ -442,12 +443,12 @@ h2 em { font-style: normal; color: var(--accent); }
   border-radius: var(--radius-sm);
   transition: border-color var(--transition-normal), background var(--transition-normal);
 }
-.case-card:hover { border-color: rgba(232, 240, 55, 0.25); background: #0f0f0f; }
+.case-card:hover { border-color: rgba(178, 172, 115, 0.3); background: #0f0f0f; }
 .case-ico { font-size: 1.6rem; margin-bottom: 1rem; }
 .case-tag {
   font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em;
   color: var(--accent);
-  background: rgba(232, 240, 55, 0.07);
+  background: rgba(178, 172, 115, 0.1);
   padding: 0.2rem 0.65rem;
   border-radius: var(--radius-sm);
   display: inline-block; margin-bottom: 0.8rem;
@@ -486,7 +487,7 @@ h2 em { font-style: normal; color: var(--accent); }
 .contact-detail a:hover { color: var(--accent); }
 .contact-detail-icon {
   width: 36px; height: 36px;
-  background: rgba(232, 240, 55, 0.08);
+  background: rgba(178, 172, 115, 0.1);
   border-radius: var(--radius-md);
   display: flex; align-items: center; justify-content: center;
   font-size: 1rem; flex-shrink: 0;
@@ -522,7 +523,7 @@ h2 em { font-style: normal; color: var(--accent); }
 .form-group select:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(232, 240, 55, 0.1);
+  box-shadow: 0 0 0 3px rgba(178, 172, 115, 0.15);
 }
 .form-group textarea { resize: vertical; min-height: 120px; }
 .form-group select { appearance: none; cursor: pointer; }
@@ -549,8 +550,8 @@ h2 em { font-style: normal; color: var(--accent); }
 
 /* --- CTA Banner --- */
 .cta-banner {
-  background: var(--accent);
-  color: var(--black);
+  background: var(--brand-dark-green);
+  color: var(--white);
   text-align: center;
   padding: var(--padding-section);
   position: relative; overflow: hidden;
@@ -566,12 +567,12 @@ h2 em { font-style: normal; color: var(--accent); }
   transform: translate(-50%, -50%);
   white-space: nowrap;
   pointer-events: none;
-  color: var(--black);
+  color: var(--white);
 }
-.cta-banner .s-tag { color: rgba(10, 10, 10, 0.45); }
-.cta-banner h2 { color: var(--black); margin-bottom: 1.2rem; }
+.cta-banner .s-tag { color: rgba(178, 172, 115, 0.8); }
+.cta-banner h2 { color: var(--white); margin-bottom: 1.2rem; }
 .cta-banner p {
-  color: rgba(10, 10, 10, 0.6);
+  color: rgba(240, 237, 232, 0.7);
   max-width: 460px;
   margin: 0 auto 2.5rem;
   font-size: 0.97rem;

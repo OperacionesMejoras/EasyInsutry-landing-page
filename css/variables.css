@@ -1,20 +1,31 @@
 /* ==========================================================
-   EasyIndustry — Brand Design Tokens
+   Easy Industry — Brand Design Tokens
+   Fuente: Manual de Identidad Visual 2023
    ========================================================== */
 
 :root {
-  /* --- Colors --- */
-  --black:       #0a0a0a;
-  --white:       #f5f3ef;
-  --accent:      #e8f037;
+  /* --- Colores de marca (Manual pág. 12) --- */
+  --brand-dark:        #121212;   /* Logo / base — gris oscuro (evita fatiga del negro puro) */
+  --brand-teal:        #2c3e3e;   /* Outer Space — hero, fondos oscuros */
+  --brand-dark-green:  #4c6735;   /* Dark Moss Green */
+  --brand-viridian:    #477965;   /* Viridian — estados hover, interactivos */
+  --brand-sage:        #b2ac73;   /* Sage — acento principal, CTAs */
+  --brand-jet:         #343434;   /* Jet — tarjetas, fondos sutiles */
+
+  /* --- Aliases semánticos --- */
+  --black:       var(--brand-dark);
+  --white:       #f0ede8;           /* Off-white cálido */
+  --accent:      var(--brand-sage);
+  --accent-deep: var(--brand-viridian);
   --light-gray:  #8a8a8a;
-  --card-bg:     #111111;
-  --bg-subtle:   #0d0d0d;
+  --card-bg:     var(--brand-jet);
+  --bg-subtle:   #1a1a1a;
   --border:      rgba(255, 255, 255, 0.07);
 
-  /* --- Typography --- */
-  --font-heading: 'Syne', 'Helvetica Neue', Arial, sans-serif;
-  --font-body:    'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  /* --- Tipografía (Manual pág. 13) --- */
+  /* Fuente oficial: Quicksand — primaria y secundaria */
+  --font-heading: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;
+  --font-body:    'Quicksand', 'Helvetica Neue', Arial, sans-serif;
 
   --font-size-xs:   0.72rem;
   --font-size-sm:   0.85rem;
@@ -24,16 +35,16 @@
   --font-size-2xl:  1.5rem;
   --font-size-3xl:  2rem;
   --font-size-4xl:  clamp(2rem, 3.5vw, 3rem);
-  --font-size-hero: clamp(3rem, 6.5vw, 6rem);
+  --font-size-hero: clamp(3rem, 6.5vw, 5.5rem);
 
-  --font-weight-light:    300;
-  --font-weight-regular:  400;
-  --font-weight-medium:   500;
-  --font-weight-semibold: 600;
-  --font-weight-bold:     700;
+  --font-weight-light:     300;
+  --font-weight-regular:   400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
   --font-weight-extrabold: 800;
 
-  /* --- Spacing --- */
+  /* --- Espaciado --- */
   --space-1:  0.25rem;
   --space-2:  0.5rem;
   --space-3:  0.75rem;
@@ -55,16 +66,17 @@
   --padding-section: var(--space-28) var(--space-20);
   --padding-mobile:  5rem 1.5rem 3rem;
 
-  /* --- Borders --- */
+  /* --- Bordes --- */
   --radius-sm: 2px;
   --radius-md: 4px;
   --radius-lg: 8px;
 
-  /* --- Transitions --- */
+  /* --- Transiciones --- */
   --transition-fast:   0.2s ease;
   --transition-normal: 0.3s ease;
   --transition-slow:   0.35s ease;
 
-  /* --- Shadows --- */
-  --glow-accent: 0 10px 30px rgba(232, 240, 55, 0.25);
+  /* --- Sombras --- */
+  --glow-accent: 0 10px 30px rgba(178, 172, 115, 0.3);
+  --glow-deep:   0 10px 30px rgba(71, 121, 101, 0.25);
 }
